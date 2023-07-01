@@ -1,0 +1,335 @@
+body {
+	display: flex;
+	flex-direction: column;
+	background-color: #f6f6f4;
+	width: 100vw;
+	min-height: 100vh;
+}
+
+@media (max-width: 428px) and (max-height: 926px) {
+	body {
+		min-height: initial;
+	}
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	width: 95%;
+	max-width: 400px;
+	padding: 20px;
+	/* text-align: center; */
+	/* margin-top: -50px; */
+	overflow: hidden;
+	transition: height 0.3s ease-in-out;
+	z-index: 1;
+	margin-bottom: 20px;
+}
+.card.expand {
+	height: 100%;
+}
+
+.logo {
+	margin-bottom: 24px;
+	width: 100%;
+	height: 42px;
+}
+.logo img {
+	width: 32%;
+}
+
+.signin,
+.signup {
+	display: flex;
+	flex-direction: column;
+}
+.signin.not-visible,
+.signup.not-visible {
+	max-height: 0;
+	opacity: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 0;
+	transform: scaleY(0);
+}
+
+.signin,
+.signup {
+	height: auto;
+	opacity: 1;
+	transition: height 0.3s ease-in-out;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.heading {
+	margin-bottom: 19px;
+}
+.form-heading {
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 0.15em;
+}
+.form-subheading {
+	color: gray;
+}
+
+div.alert {
+	display: flex;
+	align-items: center;
+	height: 34px;
+	font-size: 13px;
+	position: relative;
+	padding: 8px;
+	white-space: normal;
+}
+.signup div.alert {
+	padding: 24px 8px;
+}
+
+.alert .btn-close {
+	margin-left: auto;
+	margin-right: 5px;
+	padding: 0;
+	line-height: 1;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 10px;
+	font-size: 1rem;
+}
+
+.not-visible {
+	display: none;
+}
+
+.form input {
+	font-size: 12px;
+	height: 44px;
+	border-color: #d6d9e5;
+}
+.form select {
+	font-size: 12px;
+	height: 44px;
+	border-color: #d6d9e5;
+
+	/* for custom arrow button */
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("https://img.icons8.com/?size=512&id=5434&format=png");
+}
+.form-select::-ms-expand {
+	display: none;
+}
+.form-select option {
+	border-radius: 0;
+}
+.form-select + .dropdown-menu {
+	border-radius: 0;
+}
+.form select:active,
+.form input:active {
+	border-color: #140e34;
+}
+
+.inital-text {
+	color: gray;
+}
+.zone-flag {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #e9ecef;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+	height: 44px;
+	width: 42px;
+	padding: 0.5em;
+}
+
+/* Issue with bootstrap form validation styling. And heavy if have to dwnld bootstrap pkg */
+/* #password {
+	border-right: none;
+}
+.show-pwd {
+	background-color: white;
+	border-left: none;
+} */
+
+.form-check .form-check-input {
+	width: 40px;
+	height: 18px;
+	margin-right: 10px;
+}
+.form-check-label a {
+	text-decoration: none;
+	font-weight: 600;
+	color: #ff6637;
+}
+.was-validated .form-check-input:valid ~ .form-check-label,
+.was-validated .form-check-input:invalid ~ .form-check-label {
+	color: initial;
+}
+
+.submit {
+	background-color: #ff6637;
+	color: #f8f9fa;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 0.5em;
+	border: 1px solid lightgray;
+	border-radius: 6px;
+}
+.submit:disabled:hover,
+.submit:disabled:active {
+	border: none;
+	transition: none;
+	background-color: #ff6637;
+}
+
+.submit:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+.submit:hover {
+	background-color: #e0582e;
+}
+
+.forgot-pwd {
+	align-self: flex-end;
+	text-decoration: none;
+	color: #ff6637;
+	font-size: 12.5px;
+}
+.forgot-pwd:hover {
+	text-decoration: none;
+	color: #ff6637;
+}
+
+.switch-div {
+	text-align: center;
+	font-size: 12.5px;
+	color: gray;
+}
+#switch-btn {
+	text-decoration: none;
+	color: #ff6637;
+	font-weight: 600;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	padding: 20px;
+	width: 100%;
+	text-align: center;
+	font-size: 13px;
+	color: #73788b;
+	margin-top: 20px;
+}
+.links {
+	margin-top: 0.35em;
+}
+.footer a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #73788b;
+	box-sizing: border-box;
+	padding: 0 8px;
+}
+.leftLink {
+	border-right: 1px solid #73788b;
+}
+
+@media (max-height: 750px) {
+	.form input,
+	.form select {
+		font-size: 11px;
+		height: 40px;
+	}
+
+	div.alert {
+		font-size: 11px;
+	}
+
+	.alert .btn-close {
+		height: 15px;
+	}
+
+	.zone-flag {
+		height: 40px;
+		width: 38px;
+	}
+
+	.form-heading {
+		font-size: 18px;
+	}
+
+	.submit {
+		font-size: 16px;
+	}
+
+	.signin {
+		font-size: 12px;
+	}
+
+	.footer {
+		font-size: 11px;
+	}
+}
+
+@media (max-width: 428px) and (max-height: 926px) {
+	body {
+		background-color: white;
+	}
+	.card {
+		border: none;
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideOutLeft {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideOutRight {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}
